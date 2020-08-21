@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="problem-card">
     <div class="problem">
       <h3 class="title">{{ problem }}</h3>
       <p class="text">{{ format_date(date) }}</p>
@@ -24,6 +24,14 @@ export default {
 </script>
 
 <style>
+.problem-card {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.problem-card:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
 .problem {
   padding: 10px;
 }
@@ -39,17 +47,10 @@ export default {
 }
 
 .state {
-  border-top: 2px solid rgb(230, 230, 230);
-  border-bottom: 2px solid rgb(230, 230, 230);
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: font-weight 0.1s ease;
-}
-
-.state:hover {
-  font-weight: bold;
-  color: rgb(0, 126, 130);
   border-top: 2px solid rgb(0, 126, 130);
   border-bottom: 2px solid rgb(0, 126, 130);
+  padding: 5px 10px;
+  font-weight: bold;
+  color: rgb(0, 126, 130);
 }
 </style>

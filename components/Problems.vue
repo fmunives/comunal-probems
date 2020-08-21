@@ -4,6 +4,8 @@
       <!-- TODO click to go message details -->
       <div v-for="problem of problems">
         <Problem
+          v-on:click="showDetails"
+          :key="problem.id"
           :problem="problem.problem_type.name"
           :date="problem.created_at"
           :city="problem.location.city.name"
@@ -30,6 +32,9 @@ export default {
     return {
       problems: [],
     }
+  },
+  methods: {
+    showDetails: function () {},
   },
   created() {
     let token =
